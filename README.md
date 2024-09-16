@@ -5,24 +5,38 @@ Arquitetura:
 ![image](https://github.com/user-attachments/assets/2ffb7f80-530c-42b8-a4df-f2f6d18d3b1b)
 
 KAFKA:
+
 Abrir Server:
+
 Pasta kafka/bin:
+
 1- ./zookeeper-server-start.sh ../config/zookeeper.properties
+
 2- ./kafka-server-start.sh ../config/server.properties
 
+
 Criação dos topics:
+
 ./kafka-topics.sh --create --bootstrap-server [::1]:9092 --topic full_payments
+
 ./kafka-topics.sh --create --bootstrap-server [::1]:9092 --topic excess_payments
+
 ./kafka-topics.sh --create --bootstrap-server [::1]:9092 --topic partial_payments
 
+
 Verificar os Listenings:
+
 ./kafka-console-consumer.sh --topic excess_payments --bootstrap-server [::1]:9092 --from-beginning
+
 ./kafka-console-consumer.sh --topic partial_payments --bootstrap-server [::1]:9092 --from-beginning
+
 ./kafka-console-consumer.sh --topic full_payments --bootstrap-server [::1]:9092 --from-beginning
 
 
 
+
 Database (MariaDB):
+
 
 Tabela Charger (antiga payment)
 CREATE TABLE `charger` (
@@ -34,6 +48,7 @@ CREATE TABLE `charger` (
   UNIQUE KEY `idcharger_UNIQUE` (`idcharger`),
   KEY `merchant_id_fk_idx` (`merchant_id`)
 ) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 
 Tabela Merchant (conferencia dos dados do cliente)
 CREATE TABLE `merchant` (
