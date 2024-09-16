@@ -40,6 +40,7 @@ Database (MariaDB):
 Criação das Tabelas
 
 Tabela Charger (antiga payment)
+
 CREATE TABLE `charger` (
   `idcharger` int NOT NULL AUTO_INCREMENT,
   `merchant_id` int NOT NULL,
@@ -52,6 +53,7 @@ CREATE TABLE `charger` (
 
 
 Tabela Merchant (conferencia dos dados do cliente)
+
 CREATE TABLE `merchant` (
   `id` int NOT NULL AUTO_INCREMENT,
   `customer_name` varchar(100) NOT NULL,
