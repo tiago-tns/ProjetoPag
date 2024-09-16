@@ -37,6 +37,7 @@ Verificar os Listenings:
 
 Database (MariaDB):
 
+Criação das Tabelas
 
 Tabela Charger (antiga payment)
 CREATE TABLE `charger` (
